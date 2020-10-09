@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FizzBuzz</title>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template -->
+    <link href="Content/all.min.css" rel="stylesheet" />
+    <link href="Content/simple-line-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="Content/device-mockups.min.css" rel="stylesheet" />
+    <link href="../Content/prism.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="Content/new-age.min.css" rel="stylesheet" />
+
+    <style>
+        .orange {
+            background-color: #e66c1a;
+            color: #ffffff;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .noDisplay {
+            ;
+        }
+
+        .display {
+            display: block;
+        }
+    </style>
+    <style>
+        .myForm {
+            display: inline-flex;
+            width: 100%;
+            height: calc(20em + 5rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+        }
+    </style>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 4px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="//dragon-nates-site.netlify.app" target="_blank">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#code">View Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#features">More Challenges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#features">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+
+                <div class="col-lg-6 my-auto">
+                    <div class="header-content" style="text-align: left;">
+                        <div class="card col-lg-12 mb-1" style="background-color: black;">
+                            <div class="card-body">
+                                <h1 class="card-title">FIZZBUZZ</h1>
+                                <h3 class="card-subtitle mb-2 text-muted">A Coding Challenge</h3>
+                                <p class="card-text">This is a program that allows a user to enter in two numbers and replaces the first with Fizz and the second with Buzz. It then runs through a loop printing numbers 1-100 and replacing all multiples of chosen numbers with Fizz and Buzz while multiples of both get replaced with FizzBuzz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen" style="overflow: auto; overflow: hidden;">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <div class="col-lg-12" style="width:100%; padding-top: 10rem">
+                                        <div row style="padding-top: 1rem; text-align: center;">
+                                            <div class="input-group flex-nowrap">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text orange" style="width: 4rem">Fizz</span>
+                                                </div>
+                                                <input id="Fizzvalue" type="number" name="fizz" class="numOnly" style="width: 100%" placeholder="Enter a number!">
+                                            </div>
+                                            <div class="input-group flex-nowrap" style="padding-top: .5rem; padding-bottom: .5rem">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text orange" style="width: 4rem">Buzz</span>
+                                                </div>
+                                                <input id="Buzzvalue" type="number" name="buzz" class="numOnly" style="width: 100%" placeholder="Enter a number!">
+                                            </div>
+                                            <label><input class="btn btn-outline btn-xl js-scroll-trigger" onclick="FizzBuzzter();" type="button" value="FizzBuzzter" id="FizzBuzzter"  data-target="#exampleModal" /></label>
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content" id="inModal">
+                                                        <div class="modal-header" style="background-color: #e8500d;">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Great FizzBuzz!</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #ffffff">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="rev-style" style="padding-top: .25rem">
+                                                                <table id="results" class="responsive" style="overflow-x: auto;">
+                                                                    <!--Generated Results go here-->
+                                                                </table>
+                                                            </div>
+                                                            <script id="template-header" type="text/template">
+                                                                <thead>
+                                                                    <tr><th colspan="5"><span class="input-group-text orange">Results</span></th></tr>
+                                                                </thead>
+                                                            </script>
+                                                            <script id="template-row-items" type="text/template">
+                                                                <tr style="color: #000000; border: solid; border-color: #000000">
+                                                                    <td>{{val1}}</td>
+                                                                    <td>{{val2}}</td>
+                                                                    <td>{{val3}}</td>
+                                                                    <td>{{val4}}</td>
+                                                                    <td>{{val5}}</td>
+                                                                </tr>
+                                                            </script>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary orange" data-dismiss="modal">Try Again!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="download bg-primary text-center">
+        <div class="container">
+            <div class="header-content" style="text-align: left;" id="code">
+                <div class="card col-lg-12 mb-1" style="background-color: black;">
+                    <div class="card-body" style="color: #ffffff">
+                        <h1 class="card-title">Code View</h1>
+                        <p class="card-text">Here's my Javascript behind the action!</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mx-auto">
+                            <pre class="language-markup responsive">
+<code class="language-js">
+    //This is an optimal way to code the FizzBuzz Challenge
+
+    function FizzBuzz(val1, val2) {
+        let returnArray = [];
+        for (let i = 1; i <= 100; i++) {
+        returnArray[i] = ((i % val1 == 0 ? 'Fizz' : '') + (i % val2 == 0 ? 'Buzz' : '') || i);
+        }
+        return returnArray;
+        }
+
+    function FizzBuzzter() {
+
+    //Grab the template from the HTML document
+        let output = [];
+        let headTemplate = document.getElementById('template-header');
+        let rowTemplate = document.getElementById('template-row-items');
+
+        var templateHTML = rowTemplate.innerHTML;
+        var resultsHTML = headTemplate.innerHTML;
+
+    //Get the values I want to use
+        let val1 = document.getElementById('Fizzvalue').value;
+        let val2 = document.getElementById('Buzzvalue').value;
+
+    //Call the Fizz Buzz Function
+        output = FizzBuzz(val1, val2);
+
+    //Empty value restriction else function output
+        if (val1 == "" || val2 == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You missed some input!',
+                confirmButtonText: 'Go Back',
+            })
+        } else {
+            for (i = 1; i < output.length; i += 5) {
+                resultsHTML += templateHTML.replace('{{val1}}', output[i])
+                    .replace('{{val2}}', output[i + 1])
+                    .replace('{{val3}}', output[i + 2])
+                    .replace('{{val4}}', output[i + 3])
+                    .replace('{{val5}}', output[i + 4]);
+            }
+            document.getElementById('results').innerHTML = resultsHTML;
+            $("#exampleModal").modal();
+        }
+    }
+
+    //Input restriction for just numbers
+    $(".numOnly").keypress(function (e) {
+    if (!(e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+    return false;
+    };
+    });
+</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="Scripts/jquery.easing.min.js"></script>
+    <script src="Scripts/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="Scripts/new-age.min.js"></script>
+    <script src="Scripts/Custom.js"></script>
+</body>
+
+</html>
