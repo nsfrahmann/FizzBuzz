@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Maven+Pro:500' rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
     <link href="Content/device-mockups.min.css" rel="stylesheet" />
@@ -64,6 +65,10 @@
             border-radius: .25rem;
             transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
         }
+
+        .myFont {
+            font-family: Maven Pro
+        }
     </style>
     <style>
         table {
@@ -80,6 +85,114 @@
 
         tr:nth-child(even) {
             background-color: #dddddd;
+        }
+
+        .main {
+            background: linear-gradient(to left, #000000, #e8500d);
+            padding-top: 0;
+            margin-top: 0;
+            float: left;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            height: 5rem;
+        }
+
+        .arrow-wrap {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: -5em;
+            margin-left: -5em;
+            background: #111;
+            width: 10em;
+            height: 10em;
+            padding: 4em 2em;
+            border-radius: 50%;
+            font-size: 0.5em;
+            display: block;
+            box-shadow: 0px 0px 5px 0px #333;
+        }
+
+        .arrow {
+            float: left;
+            position: relative;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 3em 3em 0 3em;
+            border-color: #ffffff transparent transparent transparent;
+            -webkit-transform: rotate(360deg)
+        }
+
+            .arrow:after {
+                content: '';
+                position: absolute;
+                top: -3.2em;
+                left: -3em;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 3em 3em 0 3em;
+                border-color: #111 transparent transparent transparent;
+                -webkit-transform: rotate(360deg)
+            }
+
+        .arrow-wrap:hover .hint {
+            opacity: 1;
+        }
+
+
+        @-webkit-keyframes arrows {
+            0% {
+                top: 0;
+            }
+
+            10% {
+                top: 12%;
+            }
+
+            20% {
+                top: 0;
+            }
+
+            30% {
+                top: 12%;
+            }
+
+            40% {
+                top: -12%;
+            }
+
+            50% {
+                top: 12%;
+            }
+
+            60% {
+                top: 0;
+            }
+
+            70% {
+                top: 12%;
+            }
+
+            80% {
+                top: -12%;
+            }
+
+            90% {
+                top: 12%;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        .arrow-wrap .arrow {
+            -webkit-animation: arrows 2.8s 0.4s;
+            -webkit-animation-delay: 3s;
         }
     </style>
 
@@ -115,13 +228,12 @@
     <header class="masthead">
         <div class="container h-100">
             <div class="row h-100">
-
                 <div class="col-lg-6 my-auto">
                     <div class="header-content" style="text-align: left;">
                         <div class="card col-lg-12 mb-1" style="background-color: black;">
                             <div class="card-body">
-                                <h1 class="card-title">FIZZBUZZ</h1>
-                                <h3 class="card-subtitle mb-2 text-muted">A Coding Challenge</h3>
+                                <h1 class="card-title myFont">FIZZBUZZ</h1>
+                                <h3 class="card-subtitle mb-2 text-muted myFont">A Coding Challenge</h3>
                                 <p class="card-text">This is a program that allows a user to enter in two numbers and replaces the first with Fizz and the second with Buzz. It then runs through a loop printing numbers 1-100 and replacing all multiples of chosen numbers with Fizz and Buzz while multiples of both get replaced with FizzBuzz.</p>
                             </div>
                         </div>
@@ -147,7 +259,7 @@
                                                 </div>
                                                 <input id="Buzzvalue" type="number" name="buzz" class="numOnly" style="width: 100%" placeholder="Enter a number!">
                                             </div>
-                                            <label><input class="btn btn-outline btn-xl js-scroll-trigger" onclick="FizzBuzzter();" type="button" value="FizzBuzzter" id="FizzBuzzter"  data-target="#exampleModal" /></label>
+                                            <label><input class="btn btn-outline btn-xl js-scroll-trigger" onclick="FizzBuzzter();" type="button" value="FizzBuzzter" id="FizzBuzzter" data-target="#exampleModal" /></label>
                                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content" id="inModal">
@@ -194,17 +306,22 @@
                         </div>
                     </div>
                 </div>
+                <section class="main">
+                    <a class="arrow-wrap" href="#code">
+                        <span class="arrow"></span>
+                    </a>
+                </section>
             </div>
         </div>
     </header>
 
-    <section class="download bg-primary text-center">
+    <section class="download bg-primary text-center" id="code">
         <div class="container">
-            <div class="header-content" style="text-align: left;" id="code">
+            <div class="header-content" style="text-align: left;">
                 <div class="card col-lg-12 mb-1" style="background-color: black;">
                     <div class="card-body" style="color: #ffffff">
-                        <h1 class="card-title">Code View</h1>
-                        <p class="card-text">Here's my Javascript behind the action!</p>
+                        <h1 class="card-title myFont">Code View</h1>
+                        <p class="card-text myFont">Here's my Javascript behind the action!</p>
                     </div>
                     <div class="row">
                         <div class="col-md-12 mx-auto">
@@ -270,6 +387,92 @@
                     </div>
                 </div>
     </section>
+
+    <script>
+        //this is where we apply opacity to the arrow
+        $(window).scroll(function () {
+
+            //get scroll position
+            var topWindow = $(window).scrollTop();
+            //multipl by 1.5 so the arrow will become transparent half-way up the page
+            var topWindow = topWindow * 1.5;
+
+            //get height of window
+            var windowHeight = $(window).height();
+
+            //set position as percentage of how far the user has scrolled
+            var position = topWindow / windowHeight;
+            //invert the percentage
+            position = 1 - position;
+
+            //define arrow opacity as based on how far up the page the user has scrolled
+            //no scrolling = 1, half-way up the page = 0
+            $('.arrow-wrap').css('opacity', position);
+
+        });
+
+
+
+
+
+
+        //Code stolen from css-tricks for smooth scrolling:
+        $(function () {
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });//this is where we apply opacity to the arrow
+        $(window).scroll(function () {
+
+            //get scroll position
+            var topWindow = $(window).scrollTop();
+            //multipl by 1.5 so the arrow will become transparent half-way up the page
+            var topWindow = topWindow * 1.5;
+
+            //get height of window
+            var windowHeight = $(window).height();
+
+            //set position as percentage of how far the user has scrolled
+            var position = topWindow / windowHeight;
+            //invert the percentage
+            position = 1 - position;
+
+            //define arrow opacity as based on how far up the page the user has scrolled
+            //no scrolling = 1, half-way up the page = 0
+            $('.arrow-wrap').css('opacity', position);
+
+        });
+
+
+
+
+
+
+        //Code stolen from css-tricks for smooth scrolling:
+        $(function () {
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
