@@ -194,6 +194,11 @@
             -webkit-animation: arrows 2.8s 0.4s;
             -webkit-animation-delay: 3s;
         }
+        @media (max-width:575.98px) {
+            .arrow, .arrow-wrap, .main {
+                display: none;
+            }
+        }
     </style>
 
 </head>
@@ -306,11 +311,13 @@
                         </div>
                     </div>
                 </div>
-                <section class="main">
-                    <a class="arrow-wrap" href="#code">
-                        <span class="arrow"></span>
-                    </a>
-                </section>
+                <div class="mobile-hide">
+                    <section class="main">
+                        <a class="arrow-wrap" href="#code">
+                            <span class="arrow"></span>
+                        </a>
+                    </section>
+                </div>
             </div>
         </div>
     </header>
