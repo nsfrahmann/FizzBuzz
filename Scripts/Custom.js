@@ -42,9 +42,21 @@ function FizzBuzzter() {
         $("#exampleModal").modal();
     }
 }
+
 //Input restriction for just numbers
 $(".numOnly").keypress(function (e) {
     if (!(e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
         return false;
     };
 });
+
+//Fun phone animation
+function shakeScreen() {
+    document.getElementById("shake").setAttribute("class", "animate__animated animate__shakeY")
+}
+//Apply the functions
+function reset() {
+    document.getElementById("shake").setAttribute("class", "")
+}
+document.getElementById("phoneButton").addEventListener("dblclick", shakeScreen)
+document.getElementById("thePhone").addEventListener("click", reset)
