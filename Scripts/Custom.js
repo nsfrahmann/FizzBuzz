@@ -54,7 +54,7 @@ $(".numOnly").keypress(function (e) {
 function shakeScreen() {
     document.getElementById("shake").setAttribute("class", "animate__animated animate__shakeY")
 }
-//Apply the functions
+//Apply the animation functions
 function reset() {
     document.getElementById("shake").setAttribute("class", "")
 }
