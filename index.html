@@ -193,7 +193,6 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="//nates-sunsethills-solution.netlify.app" target="_blank">Sunset Hills</a>
-                    <a class="dropdown-item" href="#">Sum of All Fears</a>
                     <a class="dropdown-item" href="//nates-tacocat-solution.netlify.app" target="_blank">TacocaT</a>
                 </div>
             </div>
@@ -213,7 +212,7 @@
                         <a class="nav-link js-scroll-trigger" href="#features">Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="//dragon-nates-site.netlify.app/#contactus" target="_blank">Contact</a>
+                        <a class="nav-link js-scroll-trigger" href="//dragon-nates-site.netlify.app/#contactme" target="_blank">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -237,7 +236,7 @@
                 <div class="col-lg-6 my-auto">
                     <div class="device-container">
                         <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device" id="thePhone">
+                            <div class="device" id="thePhone" style="max-height: 550px; max-width: 300px;">
                                 <div class="screen" style="overflow: auto; overflow: hidden;">
                                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
                                     <div class="col-lg-12" style="width:100%; padding-top: 10rem">
@@ -329,9 +328,9 @@
     function FizzBuzz(val1, val2) {
         let returnArray = [];
         for (let i = 1; i <= 100; i++) {
-        returnArray[i] = ((i % val1 == 0 ? 'Fizz' : '') + (i % val2 == 0 ? 'Buzz' : '') || i);
+            returnArray[i] = ((i % val1 == 0 ? 'Fizz' : '') + (i % val2 == 0 ? 'Buzz' : '') || i);
         }
-        return returnArray;
+            return returnArray;
         }
 
     function FizzBuzzter() {
@@ -350,6 +349,36 @@
 
     //Call the Fizz Buzz Function
         output = FizzBuzz(val1, val2);
+
+    //Alternative method
+        function FizzBuzz(val1, val2) {
+            let returnValue = "";
+            let Fizz = false;
+            let Buzz = false;
+            for (let i = 1; i <= 100; i++) {
+                Fizz = i % val1 == 0;
+                Buzz = i % val2 == 0;
+                switch (true) {
+                    case Fizz: {
+                        returnValue += 'Fizz';
+                        break;
+                    }
+                    case Buzz: {
+                        returnValue += 'Buzz';
+                        break;
+                    }
+                    case Fizz && Buzz: {
+                        returnValue += 'FizzBuzz';
+                        break;
+                    }
+                    default: {
+                        returnValue += i + ' ';
+                        break;
+                    }
+                }
+            }
+        }
+
 
     //Empty value restriction else function output
         if (val1 == "" || val2 == "") {

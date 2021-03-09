@@ -1,5 +1,35 @@
 // JavaScript source code
 
+//Alternative ways to write FizzBuzz
+
+//function FizzBuzz(val1, val2) {
+//    let returnValue = "";
+//    let Fizz = false;
+//    let Buzz = false;
+//    for (let i = 1; i <= 100; i++) {
+//        Fizz = i % val1 == 0;
+//        Buzz = i % val2 == 0;
+//        switch (true) {
+//            case Fizz: {
+//                returnValue += 'Fizz';
+//                break;
+//            }
+//            case Buzz: {
+//                returnValue += 'Buzz';
+//                break;
+//            }
+//            case Fizz && Buzz: {
+//                returnValue += 'FizzBuzz';
+//                break;
+//            }
+//            default: {
+//                returnValue += i + ' ';
+//                break;
+//            }
+//        }
+//    }
+//}
+
 //This is an optimal way to code the FizzBuzz Challenge
 function FizzBuzz(val1, val2) {
     let returnArray = [];
@@ -15,8 +45,8 @@ function FizzBuzzter() {
     let headTemplate = document.getElementById('template-header');
     let rowTemplate = document.getElementById('template-row-items');
 
-    var templateHTML = rowTemplate.innerHTML;
-    var resultsHTML = headTemplate.innerHTML;
+    let templateHTML = rowTemplate.innerHTML;
+    let resultsHTML = headTemplate.innerHTML;
     //Get the values I want to use
     let val1 = document.getElementById('Fizzvalue').value;
     let val2 = document.getElementById('Buzzvalue').value;
